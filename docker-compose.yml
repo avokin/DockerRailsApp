@@ -1,9 +1,10 @@
-version: '2'
+version: '3'
 services:
   web:
     build: .
     command: bundle exec rails s -p 3000 -b '0.0.0.0'
     volumes:
       - .:/myapp
+      - ${RESOLVER_DATA_VOLUME_HOST_PATH}:/my_var
     ports:
       - "3000:3000"
